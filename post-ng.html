@@ -76,75 +76,174 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
            
-            <h3 id="followingthishttpsangulariostart">Following this: https://angular.io/start</h3>
-            
-            <p>How <code>Templates</code> work:</p>
-            
-            <ul>
-            <li><p>Angular's template syntax extends HTML and JavaScript</p>
-            
-            <ul>
-            <li>Ex: template file: <code>product-list.component.html</code></li></ul></li>
-            
-            <li><p>Directives -  We can use the <code>*ngFor directive</code> to have each product in the list to be displayed the same way, one after the other on the page. </p>
-            
-            <ul>
-            <li><p><code>*ngFor</code> causes the <code>&lt;div&gt;</code> to be repeated for each product in the list.</p></li>
-            
-            <li><p><code>*ngFor</code> is a "structural directive".  </p></li>
-            
-            <li><p>Structural directives shape or reshape the DOM's structure, typically by adding, removing, and manipulating the elements to which they are attached. </p></li>
-            
-            <li><p>Any directive with an <code>*</code> is a structural directive.</p></li></ul></li>
-            
-            <li><p>To display the names of the products, use the interpolation syntax <code>{{ }}</code>. </p></li>
-            
-            <li><p>Interpolation renders a property's value as text.</p></li>
-            
-            <li><p>Interpolation <code>{{ }}</code> lets you render the property value as text; property binding <code>[ ]</code>lets you use the property value in a template expression.</p></li>
-            
-            <li><p>Event binding is done by using <code>( )</code> around the event.</p></li>
-            
-            <li><p>Angular's template syntax:</p>
-            
-            <p><ul><li><code>*ngFor</code></li></p>
-            
-            <p><li><code>*ngIf</code></li></p>
-            
-            <p><li><code>Interpolation {{ }}</code></li></p>
+<h3 id="followingthishttpsangulariostart">Following this: https://angular.io/start</h3>
 
-            <p><li><code>Event binding ( )</code></li></p>
-            
-            <p><li><code>Property binding [ ]</code></li></ul></p>
-       
+<h3 id="quickintro">Quick Intro:</h3>
 
-            <p>How <code>Components</code> work:</p>
-            
-            <ul>
-            <li><p>Components define areas of responsibility in your UI that let you reuse these sets of UI functionality.</p></li>
-            
-            <li><p>A component is comprised of three things:</p>
-            
-            <ul>
-            <li>1- A <code>component class</code>, which handles data and functionality. Ex: the product data and the share() method were defined in the component class.</li>
-            
-            <li>2- An <code>HTML template</code>, which determines what is presented to the user. In the previous section, we modified the product list's HTML template to display the name, description, and a "Share" button for each product.</li></ul></li>
-            
-            <li><p>Component-specific styles define the look and feel. The product list does not define any styles.</p></li>
-            
-            <li><p>An Angular application is composed of a <code>tree of components</code>, in which each Angular component has a specific purpose and responsibility.</p></li>
-            
-            <li><p>The <code>@Component</code> indicates that the following class is a component. It provides metadata about the component, such as: </p>
-            
-            <ul>
-            <li><code>templates</code>, </li>
-            
-            <li><code>styles</code>, </li>
-            
-            <li>and  <code>selector</code></li></ul></li>
-            
-            <li><p>The <code>@Input</code> decorator indicates that the property value will be passed in from the component's parent (in this case, the product list component).</p></li>
-            </ul>
+<ul>
+<li>Angular great for SPAs - when only parts of the view gets refreshed asynchronously without reloading the whole page</li>
+
+<li>Follows:
+
+
+<ul>
+<li>Modular-based approach,</li>
+
+<li>Re-usable code,</li>
+
+<li>Validation &amp; routing provided (quicker development time)</li></ul>
+</li>
+
+<li>Unit testable</li>
+
+<li>Built by Google &amp; Microsoft</li>
+
+<li>Modules &amp; Components make up the bulk of an Angular application </li>
+</ul>
+
+<h3 id="howtemplateswork">How <code>Templates</code> work:</h3>
+
+<ul>
+<li><p>Angular's template syntax extends <code>HTML</code> and <code>JavaScript</code></p>
+
+<ul>
+<li>Ex: template file: <code>product-list.component.html</code></li></ul></li>
+
+<li><p>Directives - We can use the <code>*ngFor directive</code> to have each product in the list to be displayed the same way, one after the other on the page.</p>
+
+<ul>
+<li><p><code>*ngFor</code> causes the <code>&lt;div&gt;</code> to be repeated for each product in the list.</p></li>
+
+<li><p><code>*ngFor</code> is a "structural directive".</p></li>
+
+<li><p>Structural directives shape or reshape the DOM's structure, typically by adding, removing, and manipulating the elements to which they are attached.</p></li>
+
+<li><p>Any directive with an <code>*</code> is a structural directive.</p></li></ul></li>
+
+<li><p>To display the names of the products, use the interpolation syntax <code>{{ }}</code>.</p></li>
+
+<li><p>Interpolation renders a property's value as text.</p></li>
+
+<li><p>Interpolation <code>{{ }}</code> lets you render the property value as text; property binding <code>[ ]</code>lets you use the property value in a template expression.</p></li>
+
+<li><p>Event binding is done by using <code>( )</code> around the event.</p></li>
+
+<li><p>Angular's template syntax:</p>
+
+<ul>
+<li><p><code>*ngFor</code></p></li>
+
+<li><p><code>*ngIf</code></p></li>
+
+<li><p><code>Interpolation {{ }}</code></p></li>
+
+<li><p><code>Event binding ( )</code></p></li>
+
+<li><p><code>Property binding [ ]</code></p></li></ul>
+
+<h3 id="howcomponentswork">How <code>Components</code> work:</h3>
+
+<ul>
+<li><p>Components define areas of responsibility in your UI that let you reuse these sets of UI functionality.</p></li>
+
+<li><p>Usually the Root Component is defined as <code>AppComponent</code></p></li>
+
+<li><p>Each <code>Module</code> is made up of <code>Components</code> and <code>Services</code></p></li>
+
+<li><p>Usually the Root Module is defined as <code>AppModule</code></p></li>
+
+<li><p>A <code>Module</code> has:</p>
+
+<ul>
+<li>Declarations,</li>
+
+<li>Imports,</li>
+
+<li>Providers (for services)</li>
+
+<li>Bootstrap (for components)</li></ul></li>
+
+<li><p>A <code>Component</code> is comprised of three things:</p>
+
+<ul>
+<li>1- A <code>component class</code>, which handles data and functionality. Ex: the product data and the <code>share()</code> method were defined in the component class. Written using <code>TypeScript</code> </li>
+
+<li>2- An <code>HTML template</code>, which determines what view(s) is presented to the user. In the previous section, we modified the product list's HTML template to display the name, description, and a "Share" button for each product.</li>
+
+<li>3-Metadata - information using <code>decorators</code> (which is unique to <code>TypeScript</code>) </li></ul></li></ul></li>
+
+<li><p>Component-specific styles define the look and feel. The product list does not define any styles.</p>
+
+<ul>
+<li><p>An Angular application is composed of a <code>tree of components</code>, in which each Angular component has a specific purpose and responsibility.</p></li>
+
+<li><p>The <code>@Component</code> indicates that the following class is a component. It provides metadata about the component, such as:</p>
+
+<ul>
+<li><code>templates</code>,</li>
+
+<li><code>styles</code>,</li>
+
+<li>and <code>selector</code></li></ul></li>
+
+<li><p>The <code>@Input</code> decorator indicates that the property value will be passed in from the component's parent (in this case, the product list component).</p></li></ul></li>
+</ul>
+
+<h3 id="howserviceswork">How <code>Services</code> work:</h3>
+
+<ul>
+<li>These comprise of business logic and take up a hierarchical structure</li>
+
+<li>Heavy use of <code>dependency injection</code> </li>
+
+<li>Use <code>injectable decorators</code></li>
+
+<li>Return <code>Observables</code>
+
+
+<ul>
+<li>Which are basically HTTP calls - can be single item</li>
+
+<li>Or a sequence of items that arrive asynchronously over time</li></ul>
+</li>
+
+<li>Example: An <code>EmployeeService</code> is an <code>Injector</code> into <code>EmployeeList</code> and <code>EmployeeDetail</code> </li>
+</ul>
+
+<h3 id="howthefilestructurelooksforanangularapp">How the File Structure looks for an Angular app:</h3>
+
+<ul>
+<li><code>package,json</code> - contains the dev dependencies, modules, loading scripts.</li>
+
+<li><code>src/</code> folder - 
+    * <code>main.ts</code> - entry point into the app
+    * <code>app/</code> directory - contains the <code>app.module.ts</code> which is the root module of any Angular app
+    * also contains the <code>app.component.ts</code> which is the root component of any Angular app</li>
+
+<li>The <code>ng serve</code> executes the <code>main.ts</code> class</li>
+</ul>
+
+<h3 id="architecturesummary">Architecture Summary:</h3>
+
+<ul>
+<li>Angular app => made up of 1+ <code>Module</code></li>
+
+<li><code>Module</code> => made up of 1+ <code>Component</code> &amp; <code>Service</code></li>
+
+<li><code>Component</code> => made up of <code>HTML Template</code> &amp; <code>Component</code> class
+
+
+<ul>
+<li>Represent different portions of the <em>view</em> in the app</li></ul>
+</li>
+
+<li><code>Service</code> => made up of business logic
+
+
+<ul>
+<li>Modules interact &amp; ultimately render the view in the browser  </li></ul>
+</li>
+</ul>
 
    
 
