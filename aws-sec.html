@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>WahBlog - All things Tech</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Abdul Wahab's Tech Blog</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="post.html">Sample Post</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('iimg/post-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>AWS Security Best Practices</h1>
+            <h2 class="subheading">A handy guide for engineers to develop on AWS using best practices.</h2>
+            <span class="meta">Published by
+              <a href="#">Abdul Wahab</a>
+              on October 1, 2019</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+           
+
+<h3 id="quickintro">How to set up accounts:</h3>
+
+<ul>
+    <li>Use Multifactor Authentication for the “root” account</li>
+    <li>Regular use of root user accounts should be limited and even avoided</li> 
+    <li>Access keys must not be used with root accounts</li> 
+    <li>Least privileged access must be granted as much as possible for application users</li>
+</ul>
+
+<h3 id="howtemplateswork">How <code>IAM Settings</code> work:</h3>
+
+<ul>
+        <li>Always set Multifactor Authentication for IAM users</li>
+        <li>Allow IAM users for multi-mode access</li>
+        <li>Link IAM policies to Groups or Roles</li>
+        <li>Regularly rotate IAM access keys, and standardize the selected number of days</li>
+        <li>Grant access to resources using IAM roles</li>
+        <li>Keep the number of IAM groups low</li>
+        <li>Disable access for inactive IAM users</li>
+        <li>Remove inactive IAM access keys</li>
+</ul>
+
+<h3 id="howserviceswork">How to use <code>Logging</code> services:</h3>
+
+<ul>
+    <li>Enable CloudTrail logging across all Amazon Web Services your organization uses</li>
+    <li>Allow CloudTrail multi-region logging</li>
+    <li>Permit access logging for Elastic Load Balancer Service (ELB)</li>
+    <li>Allow Redshift audit logging</li>
+    <li>Set CloudTrail log file validation</li>
+    <li>Allow Virtual Private Cloud (VPC) flow logging</li>
+    <li>Permit access logging for CloudTrail S3 buckets</li>
+    <li>Combine CloudTrail logging with CloudWatch events</li>
+    <li>Encrypt the CloudTrail log files at rest</li>
+</ul>
+
+<h3 id="howthefilestructurelooksforanangularapp">Applying Development Best Practices </h3>
+
+<ul>
+    <li>Use Multifactor Authentication (MFA) to delete CloudTrail buckets</li>
+    <li>Expired SSL/TLS certificates must never be used</li>
+    <li>Always use HTTPS for CloudFront distributions</li>
+    <li>Your Elastic Block Store (EBS) database should be encrypted</li>
+    <li>Restrict access to well-known ports such as CIFS, FTP, ICMP, SMTP, SSH, Remote desktop
+    Disallow unrestricted ingress access on different ports
+    Also to resources like: AMIs (Amazon Machine Images), EC2 Security Groups, Redshift clusters, RDS Instances, and in general all outbound calls</li>
+    <li>Permit the require_ssl parameter in all your Redshift clusters</li>
+</ul>
+
+<h3 id="howserviceswork">Data Security Best Practices</h3>
+
+<ul>
+    <li>Always encrypt sensitive data like personally identifiable information (PII) or protected health information (PHI)</li>
+    <li>Properly encrypt Amazon’s Relational Database Service (RDS)</li>
+</ul>
+
+<h3 id="howserviceswork">General Best Practices</h3>
+
+<ul>
+        <li>Involve information security throughout the development process rather than at certain points</li>
+        <li>The amount of discrete security groups should be minimized</li>
+        <li>Periodically rotate SSH keys</li> 
+        <li>Use a standard naming/tagging convention for all resources</li>
+        <li>Implement a strict password policy</li>
+        <li>Purge unused SSH Public Keys</li>
+</ul>
+
+
+   
+
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy; WahBlog 2019</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
