@@ -4,7 +4,7 @@
 
 ## Preview
 
-[![WahBlog Preview](https:wahablog.githib.io)
+[![WahaBlog Preview](https:wahablog.githib.io)
 
 **[View Live Preview](https:wahablog.githib.io)**
 

@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>WahBlog - All things Tech</title>
+  <title>WahaBlog - All things Tech</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -44,9 +44,9 @@
           <li class="nav-item">
             <a class="nav-link" href="post.html">Sample Post</a>
           </li> -->
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="contact.html">Contact</a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
@@ -75,9 +75,14 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-           
+            <h2 class="section-heading">Background</h2>
 
-<h3 id="quickintro">How to set up accounts:</h3>
+            <p>AWS comes with a ton of freedom and opportunities. And we all know, with tons of freedom comes tons of responsibility. In short, AWS offers a great deal of flexibility in terms of what security configuarations one can set up. From an organizational perspective, these settings, or lack thereof, are bound to have a huge impact on the company. With the rise in data breaches occurring across the tech landscape, it is important that as each company begins their migration to the Cloud, they keep security as a top-most priority in their mind. </p>
+            <p>
+            After all, AWS is almost like an apartment (development platform) that you as a company (tenant) will be renting. You will be placing your Data (Customer and Internal), APIs, and Client-facing applications (your most valued assets) in the Cloud. Would you want to leave your apartment front door with a weak lock, while your $1200 MacBook Pro, Designer Watch collection, and a bunch of other valuables are sitting in there? NO? Then keep reading. :) </p> 
+           <br>
+
+<h3 id="accounts">How to set up accounts:</h3>
 
 <ul>
     <li>Use Multifactor Authentication for the “root” account</li>
@@ -86,7 +91,9 @@
     <li>Least privileged access must be granted as much as possible for application users</li>
 </ul>
 
-<h3 id="howtemplateswork">How <code>IAM Settings</code> work:</h3>
+<br>
+
+<h3 id="iamsettings">How <code>IAM Settings</code> work:</h3>
 
 <ul>
         <li>Always set Multifactor Authentication for IAM users</li>
@@ -99,7 +106,9 @@
         <li>Remove inactive IAM access keys</li>
 </ul>
 
-<h3 id="howserviceswork">How to use <code>Logging</code> services:</h3>
+<br>
+
+<h3 id="logging">How to use <code>Logging</code> services:</h3>
 
 <ul>
     <li>Enable CloudTrail logging across all Amazon Web Services your organization uses</li>
@@ -113,7 +122,9 @@
     <li>Encrypt the CloudTrail log files at rest</li>
 </ul>
 
-<h3 id="howthefilestructurelooksforanangularapp">Applying Development Best Practices </h3>
+<br>
+
+<h3 id="devbestpracs">Applying Development Best Practices </h3>
 
 <ul>
     <li>Use Multifactor Authentication (MFA) to delete CloudTrail buckets</li>
@@ -126,14 +137,18 @@
     <li>Permit the require_ssl parameter in all your Redshift clusters</li>
 </ul>
 
-<h3 id="howserviceswork">Data Security Best Practices</h3>
+<br>
+
+<h3 id="datasecbestpracs">Data Security Best Practices</h3>
 
 <ul>
     <li>Always encrypt sensitive data like personally identifiable information (PII) or protected health information (PHI)</li>
     <li>Properly encrypt Amazon’s Relational Database Service (RDS)</li>
 </ul>
 
-<h3 id="howserviceswork">General Best Practices</h3>
+<br>
+
+<h3 id="generalbestpracs">General Best Practices</h3>
 
 <ul>
         <li>Involve information security throughout the development process rather than at certain points</li>
@@ -185,7 +200,7 @@
               </a>
             </li>
           </ul>
-          <p class="copyright text-muted">Copyright &copy; WahBlog 2019</p>
+          <p class="copyright text-muted">Copyright &copy; WahaBlog 2019</p>
         </div>
       </div>
     </div>
