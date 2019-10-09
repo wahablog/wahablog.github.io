@@ -21,6 +21,9 @@
   <!-- Custom styles for this template -->
   <link href="css/clean-blog.min.css" rel="stylesheet">
 
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+
 </head>
 
 <body>
@@ -63,7 +66,7 @@
             <h2 class="subheading">A handy guide for engineers to develop on AWS using security best practices.</h2>
             <span class="meta">Published by
               <a href="https://www.linkedin.com/in/arwahab/" target="_blank">Abdul Wahab</a>
-              on October 1, 2019</span>
+              on October 6, 2019</span>
           </div>
         </div>
       </div>
@@ -85,18 +88,85 @@
             <p>
             After all, AWS is almost like an apartment (development platform) that you as a company (tenant) will be renting. You will be placing your Data (Customer information, SPI, NPI and Internal), APIs, and Client-facing applications (your most valued assets) in the Cloud. Would you want to leave your apartment front door with a weak, brittle lock, while your $1200 MacBook Pro, Designer Watch collection, and a bunch of other valuables are sitting in there? NO? Then keep reading :).</p> 
 <br>
-<h3 id="accounts">How to set up accounts:</h3>
+<!--Accordion wrapper-->
+<div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
 
+  <!-- Accordion card -->
+ <div class="card">
+
+    <!-- Card header -->
+    <div class="card-header" role="tab" id="headingSix6">
+      <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseSix6" aria-expanded="true"
+        aria-controls="collapseSix6">
+        <h5 class="mb-0"> 1) General Best Practices<i class="fas fa-angle-down rotate-icon"></i>
+        </h5>
+      </a>
+    </div>
+<!-- Card body -->
+<div id="collapseSix6" class="collapse show" role="tabpanel" aria-labelledby="headingSix6"
+data-parent="#accordionEx">
+<div class="card-body">
+
+<ul>
+        <li>Involve information security throughout the development process rather than at certain points</li>
+        <li>The amount of discrete security groups should be minimized</li>
+        <li>Periodically rotate SSH keys</li> 
+        <li>Use a standard naming/tagging convention for all resources</li>
+        <li>Implement a strict password policy</li>
+        <li>Purge unused SSH Public Keys</li>
+</ul>
+</div>
+</div>
+</div>
+
+<br>
+
+  <!-- Accordion card -->
+  <div class="card">
+
+    <!-- Card header -->
+    <div class="card-header" role="tab" id="headingOne1">
+      <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
+        aria-controls="collapseOne1">
+        <h5 class="mb-0"> 2) How to set up accounts:   
+            <i class="fas fa-angle-down rotate-icon"></i>
+          </h5>
+        </a>
+      </div>
+ <!-- Card body -->
+ <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
+ data-parent="#accordionEx">
+ <div class="card-body">
 <ul>
     <li>Use Multifactor Authentication for the “root” account</li>
     <li>Regular use of root user accounts should be limited and even avoided</li> 
     <li>Access keys must not be used with root accounts</li> 
     <li>Least privileged access must be granted as much as possible for application users</li>
 </ul>
+</div>
+</div>
+</div>
+
+
+
 
 <br>
 
-<h3 id="iamsettings">How <code>IAM Settings</code> work:</h3>
+ <!-- Accordion card -->
+ <div class="card">
+
+    <!-- Card header -->
+    <div class="card-header" role="tab" id="headingTwo2">
+      <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2" aria-expanded="true"
+        aria-controls="collapseTwo2">
+        <h5 class="mb-0"> 3) How <code>  IAM Settings</code> work:  <i class="fas fa-angle-down rotate-icon"></i>
+        </h5>
+      </a>
+    </div>
+<!-- Card body -->
+<div id="collapseTwo2" class="collapse show" role="tabpanel" aria-labelledby="headingTwo2"
+data-parent="#accordionEx">
+<div class="card-body">
 
 <ul>
         <li>Always set Multifactor Authentication for IAM users</li>
@@ -108,10 +178,29 @@
         <li>Disable access for inactive IAM users</li>
         <li>Remove inactive IAM access keys</li>
 </ul>
+</div>
+</div>
+</div>
 
 <br>
 
-<h3 id="logging">How to use <code>Logging</code> services:</h3>
+ 
+ <!-- Accordion card -->
+ <div class="card">
+
+    <!-- Card header -->
+    <div class="card-header" role="tab" id="headingThree3">
+      <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3" aria-expanded="true"
+        aria-controls="collapseThree3">
+        <h5 class="mb-0"> 4) How to use <code>Logging</code> services:
+            <i class="fas fa-angle-down rotate-icon"></i>
+          </h5>
+        </a>
+      </div>
+  <!-- Card body -->
+  <div id="collapseThree3" class="collapse show" role="tabpanel" aria-labelledby="headingThree3"
+  data-parent="#accordionEx">
+  <div class="card-body">
 
 <ul>
     <li>Enable CloudTrail logging across all Amazon Web Services your organization uses</li>
@@ -124,10 +213,27 @@
     <li>Combine CloudTrail logging with CloudWatch events</li>
     <li>Encrypt the CloudTrail log files at rest</li>
 </ul>
-
+</div>
+</div>
+</div>
 <br>
 
-<h3 id="devbestpracs">Applying Development Best Practices </h3>
+<!-- Accordion card -->
+<div class="card">
+
+    <!-- Card header -->
+    <div class="card-header" role="tab" id="headingFour4">
+      <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseFour4" aria-expanded="true"
+        aria-controls="collapseFour4">
+        <h5 class="mb-0"> 5) Applying Development Best Practices 
+          <i class="fas fa-angle-down rotate-icon"></i>
+        </h5>
+      </a>
+    </div>
+<!-- Card body -->
+<div id="collapseFour4" class="collapse show" role="tabpanel" aria-labelledby="headingFour4"
+data-parent="#accordionEx">
+<div class="card-body">
 
 <ul>
     <li>Use Multifactor Authentication (MFA) to delete CloudTrail buckets</li>
@@ -139,28 +245,38 @@
     Also to resources like: AMIs (Amazon Machine Images), EC2 Security Groups, Redshift clusters, RDS Instances, and in general all outbound calls</li>
     <li>Permit the require_ssl parameter in all your Redshift clusters</li>
 </ul>
-
+</div>
+</div>
+</div>
 <br>
 
-<h3 id="datasecbestpracs">Data Security Best Practices</h3>
+<!-- Accordion card -->
+<div class="card">
+
+    <!-- Card header -->
+    <div class="card-header" role="tab" id="headingFive5">
+      <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseFive5" aria-expanded="true"
+        aria-controls="collapseFive5">
+        <h5 class="mb-0"> 6) Data Security Best Practices<i class="fas fa-angle-down rotate-icon"></i>
+        </h5>
+      </a>
+    </div>
+<!-- Card body -->
+<div id="collapseFive5" class="collapse show" role="tabpanel" aria-labelledby="headingFive5"
+data-parent="#accordionEx">
+<div class="card-body">
 
 <ul>
     <li>Always encrypt sensitive data like personally identifiable information (PII) or protected health information (PHI)</li>
     <li>Properly encrypt Amazon’s Relational Database Service (RDS)</li>
 </ul>
+</div>
+</div>
+</div>
 
 <br>
 
-<h3 id="generalbestpracs">General Best Practices</h3>
 
-<ul>
-        <li>Involve information security throughout the development process rather than at certain points</li>
-        <li>The amount of discrete security groups should be minimized</li>
-        <li>Periodically rotate SSH keys</li> 
-        <li>Use a standard naming/tagging convention for all resources</li>
-        <li>Implement a strict password policy</li>
-        <li>Purge unused SSH Public Keys</li>
-</ul>
 
 
    
