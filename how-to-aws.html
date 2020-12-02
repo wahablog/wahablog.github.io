@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>WahaBlog - All things Tech</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Abdul Wahab's Tech Blog</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/bg-img.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>How to pick the right AWS Services for your Application</h1>
+            <!-- <h2 class="subheading">AWS Summit Online is a series of online virtual events that bring the cloud computing community together to connect, collaborate, and learn about AWS.</h2> -->
+            <span class="meta">Published by: 
+              <a href="https://www.linkedin.com/in/arwahab/" target="_blank">Abdul Wahab</a>
+              on Dec 01, 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <h2 class="section-heading">The Move to Cloud</h2>
+         <p>As more organizations start making their Public Cloud Adoption journey, 
+           chances are they will either be migrating existing APIs/applications to the cloud, and even
+           building new ones. If you are looking into leveraging AWS, you want to make
+           sure that you choose the right tech stack to build your APIs/applications. 
+         </p>
+         <p>
+          AWS is like a huge candy store, with ~100+ available services to choose from for building applications.
+          As a responsible developer, you want to make sure you identify the pros and cons of each particular
+          AWS service you consider (aspects like: integration with other applications/platforms, availability, pricing, future growth/scalability options, 
+          permissions, etc.). 
+
+          <p>These are aspects you should address as early as possible, before drawing out any sort of architectural design
+            or programming. Addressing these concerns initially will help enable you to have highly-reliable APIs/applications
+            in the future that will help grow your business. 
+          </p>
+         </p>  
+
+          <h2 class="section-heading">Step 0: Know your Business and Customer Requirements</h2>
+  
+        
+          <p>This step is of utmost importance while considering AWS. Before you pick any AWS tech stack, you need to know your business and customer requirements. 
+            Some important considerations include: 
+
+            <ul>
+              <li>The Business flows your API/service will support (example: submit requests, update/store information, etc.) </li>
+              <li>The Customer group - who executes those business streams and where from? (example: clients, different frameworks/applications) </li>
+              <li>Knowing what is the recurrence of every flow? (example 2000 requests per every hour, 100 assignments everyday, etc.)</li>
+              <li>Understanding the business impacts via quantifiable metrics, if for example, any of these flows quit working or malfunction for: 1 moment, 5 minutes, 60 minutes, 8 hours, 24 hours? 
+              </li>
+            </ul>
+
+            Having the answers to those points will give you the correct setting to settle on potential AWS services.
+          </p>
+
+  
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+              <li class="list-inline-item">
+                  <a href="https://www.linkedin.com/in/arwahab/" target="_blank">
+                    <span class="fa-stack fa-lg">
+                      <i class="fas fa-circle fa-stack-2x"></i>
+                      <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="https://github.com/arwahab" target="_blank">
+                    <span class="fa-stack fa-lg">
+                      <i class="fas fa-circle fa-stack-2x"></i>
+                      <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="mailto:arw9511@gmail.com">
+                      <span class="fa-stack fa-lg">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy; WahaBlog 2019</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
