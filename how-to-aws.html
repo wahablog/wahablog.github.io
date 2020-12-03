@@ -102,7 +102,46 @@
           </p>
 
           <h2 class="section-heading">Step 1: Consider Performance and Future Scalability</h2>
-          <p></p>
+          <p> This can be an expensive one if not given proper and thorough considerations. 
+            Applications are meant to grow over a period of time, either through additional 
+            calling applications or features. Although in the early stages it can be difficult 
+            to preciesly pinpoint what number of resources/VMs to allocate to a partircular application, 
+            it's always safe to consider the following points:
+          </p>
+          
+          <h3 class="section">Is it scalable?</h3>
+          <p>
+            While assessing a specific AWS service, try to pinpoint those AWS resources or confugration settings that will help drive scale for your applications. 
+            This will enable you to begin with the correct limit with regards to each AWS resource, and develop a procedure in place to scale your AWS infrastructure as your application's utilization develops.
+          </p>
+
+          <p>
+            Scaling examples: #of Provisioned EC2 instances, Dynamo DB capacity units, Lambda function concurrency, RDS read replicas, Elastic Load Balancers, ElastiCache cluster size, etc.
+          </p>
+
+          <h3 class="section">Are there resource utilization limits?</h3>
+          <p>
+            AWS can appear like this infinite source of computing power, but there are limits. Specifically, limits applied to your account.
+
+            Here are examples of some resource limit dimensions:
+            <ul>
+             <li>Number of provisioned resources (i.e. EC2 instances, SQS queues, CloudWatch Alarms, IAM Roles/Users, S3 Buckets, VPCs)</li>
+             <li>Data retention periods (i.e. CloudWatch metrics, Kinesis streams, SQS message retention)</li> 
+             <li>Throughput (i.e. concurrent Lambda executions, CloudWatch List/Describe/Put requests, SNS messages per second, Dynamo DB capacity units, EFS throughput in Gb/s)</li> 
+             <li>Payload size (i.e. SQS messages, Dynamo DB items, Kinesis records, IoT messages, IAM policy size)</li>
+             <li>Storage size (i.e. EBS volume size)</li>
+            <li>Note that some limits can be increased (for example, number of EC2 instances you can launch), while others cannot (for example, metric retention in CloudWatch). Make sure there are no deal breakers for your application in the “cannot be increased” category.</li>
+          </ul>
+            
+            
+            
+          </p>
+
+          <p>
+            Scaling examples: #of Provisioned EC2 instances, Dynamo DB capacity units, Lambda function concurrency, RDS read replicas, Elastic Load Balancers, ElastiCache cluster size, etc.
+          </p>
+
+      
           <h2 class="section-heading">Step 2: Think about Availability</h2>
           <p></p>
           <h2 class="section-heading">Step 3: AuthN & AuthZ</h2>
