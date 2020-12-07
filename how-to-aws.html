@@ -52,7 +52,7 @@
           <div class="post-heading">
             <h1>AWS Architecture - Picking the right AWS Services for your App</h1>
             <span class="meta">Published by: 
-              <a href="https://www.linkedin.com/in/arwahab/" target="_blank">Abdul Wahab</a>
+              <a href="https://www.linkedin.com/in/arwahab" target="_blank">Abdul Wahab</a>
               on Dec 01, 2020</span>
           </div>
         </div>
@@ -170,25 +170,123 @@
              IAM (Identity and Access Management) is the key and global method for authentication and permissions management in AWS. 
              Aside from this one, there are also additional mechanisms and tools that vary by service.
           </p>
-          <h3 class="section">Create resource-based permission policies</h3>
+          <h3 class="section">Create Resource-based permission policies</h3>
+          <p>By and large, everything accessed in AWS is controlled by roles and resource-based 
+            permission policies. Resource-based policies are assigned to entities (another AWS service like S3 buckets, SNS topic, user, admin, etc.)
+            Reource-based policies enforce specific AWS accounrs that are allowed to access a particular resource, and 
+            the methods (like GET, PUT, DELETE) that can be executed against them. 
+          </p>
+          <p>You also have IAM Roles that are assumed/assigned to users/resources which hold Resource-based permission policies.
+            Roles carry flexibility in that they can be assumed by an entity on an as needed basis. 
+          And when no longer required/unauthorized, you can unassign the role and be done.</p>
+          
           <h3 class="section">Enable CloudTrail</h3>
-          <h3 class="section">Encrypt your Data</h3>
-
-          <h2 class="section-heading">Step 4: Proactive Monitoring</h2>
+          <p>CloudTrail enables logging and auditing of nearly all AWS events. You can 
+            view API activity logs via CloudTrail, and find out details like which API methods
+            are being called, the entity calling them, etc. This helps from a traceability perspective
+            in giving you the paper trail of event in case something like a breach occurs.
+          </p>
           <p></p>
+          <h3 class="section">Encrypt your Data</h3>
+          <p>Encryption in transit is usually readily available through using HTTPS. 
+            Encryption at rest is also a way of encrypting data while it's stored in 
+            one place. Services like S3, Elastic Blockstore, Glacier, Elastic MapReduce, 
+            Redshift warehousing, and DynamoDB offer encryption at rest to protect stored data.
+          </p>
+
+          <h2 class="section-heading">Step 4: Proactive Monitoring and Operations</h2>
+          <p>Early incorporation of operational processes is extremely valuable. If you’re thinking about a particular AWS service, evaluating its features in this context will enable you to identify architecture and application components that will in turn make your operations easier. The earlier you look into this, the better. Monitoring is an critical part of operational procedures, I highly suggest knowing which metrics are available for a particular AWS service.
+          </p>
           <h3 class="section">Enable CloudWatch monitoring</h3>
-          <h3 class="section">Appropriately managing incidents</h3>
+          <p>CloudWatch enables capturing of performance metrics. Every service under AWS generates 
+            CloudWatch metric logs that enable you to keep the system health in check, and take any sorts
+            of corrective action required when something is not working as desired. 
+          </p>
+          <p>
+            Performance metrics vary service to service, in terms of how often they are published. 
+            Example: API Gateway generates metrics per minute, EC2 publishes metrics per minute (at an additional cost), and Elastic MapReduce publishes every five minutes. 
+          </p>
+          <p>You need to ensure that performance metric intervals make sense for your application, in order to effectively know how it's performing from a health perspective. </p>
+
+          <p>CloudWatch also allows creation of dashboards to provide a visual and filter data 
+            based on performance metric filters, percentiles, and metric math filters. 
+            Some metrics are not available by default through CloudWatch, so you may need to 
+            figure out a way to capture those data points. Example: EC2 Memory and Disk utilization is not a default metric available from CloudWatch. 
+          </p>
+
+          <p>Either way, a method of gathering performance metrics should be another key consideration 
+            so that you can be able to tell at any time how your application is performing, and address
+            any concerns.
+          </p>
+          
+          <h3 class="section">Appropriately manage incidents</h3>
+          <p>In IT, incidents and unexpected behavior is commonplace. The key question is, 
+            when picking a service, how difficult/seamless will it be to deal with them?
+          </p>
+
+          <h4 class="section">Create CloudWatch Alarms and SNS Notifications</h4>
+          <p>By default, all CloudWatch alarms have option to send SNS (Simple Notification Service)
+            notifications. You have options on how you'd like to know about particular incidents 
+            once a notification is sent (examples: send an e-mail, push a message to the SQS Queue service, invoke a Lambda function, or call vendor service incident response plaform via HTTPS). 
+          </p>
+
+          <p>Other points to consider include: if we choose this AWS service, how are we going to if/when something is not right? Will the existing performance metrics from this service be sufficient 
+            to create a meaningful alert/alarm? What are the right time increments (one-minute or five-minute) to be able to tell if a CloudWatch alar needs to be triggered? Do we need more 
+            responsive measures than just the alarm? Once the alarm is triggered, do I have the right infrastructure in place that will handle failover and effective remediation? Will I need to 
+            create new response methods if I choose to implement this particular service? If we pick this AWS service, how can we address issues through automated means? 
+          </p>
+          
           <h3 class="section">Deployment methods and practices</h3>
 
-          <p></p>
+          <p>This aspect is almost considered way late - how are we going to deploy this thing?
+            Will we automate deployments? Use GitOps? 
+          </p>
+
+          <h4>IaaC - Terraform or CloudFormation</h4>
+          <p>Terraform and CloudFormation are both AWS infrastructure provisioning tools that
+            create entire project setups and deployments through automation in AWS.
+            Terraform is cloud-provider agnostic, and CloudFormation is native to AWS. 
+            You can choose whichever one you prefer based on how much flexibility you need. 
+          </p>
+
+          <p>They both can have a learning curve, so it is important to understand and 
+            experiment with them to know how they work. It's also important to know about how to do Rollbacks if necessary, as well as any automated processes/setup that you may need to run prior/after you run your 
+            Terraform or CloudFormation deployment. 
+          </p>
+          
           <h2 class="section-heading">Step 5: Know your Costs</h2>
           <p></p>
-          <h3 class="section">Identify AWS price dimensions relevant to your application and AWS service</h3>
-          <p></p>
+          
+          <h3 class="section">Determine the AWS price dimensions as linked to your application and AWS service</h3>
+          
+          <p>A lot of teams tend to disregard important price attributes of their applications.
+            Example: Cost estimation of EC2 being primarily based on instance type, and not accounting
+            for the storage costs in EBS or data transfer costs. 
+          </p>
+
+          <p>Example: You've got a File-Sharing server using the EC2 t2.Large instance, and
+            you're only focused on the hourly compute costs for that type of instance. Alone, 
+            the compute charges for t2.Large will be around $70 per month in the N.Virginia region. 
+            Then, if say your server transfers one terabyte of data per month externally, your transfer cost can be anywhere between $90-$110 alone. One terabyte of Elastic BlockStore can cost 
+            around $100 per month. 
+          </p>
+
+          <p>If this type of oversight is made at a scale, you can be paying upwards of couple thousands
+            of dollars in unforseen additional costs montly for this type of setup. 
+          </p>
+          
           <h3 class="section">Identify and calculate price at scale</h3>
-          <p></p>
-          <h3 class="section">Compare pricing in ALL AWS Regions for a particular AWS service</h3>
-          <p></p>
+          <p>Try to evaluate AWS services based on price calculations for low and high usage of a particular service. What happens when your application sees more than expected levels of traffic? What if less than you previously thought? A lot less?</p>
+
+          <p>There are some AWS services that cost less as usage increases. S3 is one of those, and it
+            has different price ranges all depending on usage. 
+          </p>
+
+          <p>Lambda functions can be a double-edge sword in these scenarios. Some can be more expensive 
+            at 200 transactions per second, in comparison to an EKS Cluster containing 6 M3.large instances. Now, this also depends on the function type and intensity (if it takes 1200ms to run, and consumes up to 512MB of memory per execution), you could easily be paying upwards 
+            of $15,000 for your Lambda. But, if that same function volume-wise did not receive a relatively large number of calls, that would be the prime option. 
+          </p>
+        
   
         </div>
       </div>
