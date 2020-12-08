@@ -53,7 +53,7 @@
             <h1>AWS Architecture - Picking the right AWS Services for your App</h1>
             <span class="meta">Published by: 
               <a href="https://www.linkedin.com/in/arwahab" target="_blank">Abdul Wahab</a>
-              on Dec 01, 2020</span>
+              on Dec 07, 2020</span>
           </div>
         </div>
       </div>
@@ -72,119 +72,124 @@
            sure that you choose the right technical stack to build your APIs/applications. 
          </p>
          <p>
-          AWS is like a huge candy store, with ~100+ available services to choose from for building applications.
-          As a responsible developer, you want to make sure that you identify the pros and cons of each particular
-          AWS service (aspects like: integration with other applications/platforms, availability, pricing, future growth/scalability options, 
-          permissions, etc.). 
+          AWS is like a huge candy store, with ~100+ available services to choose from for building applications. As a responsible developer, you want to make sure that you identify and weigh the pros and cons of each particular AWS service. You will need to review things like: costs and pricing, security, availability and reliability, performance, integration with other applications and platforms, future growth/scalability options, etc.
 
-          <p>These are aspects you should address as early as possible, before drafting out any sort of architectural design models,
-            or writing any code. Addressing these concerns initially will help enable you to have highly-reliable APIs/applications
-            in the future that will help grow your business. 
+          <p>These are aspects you should address as early as possible before drafting out any sort of architectural design models, or writing any code. Addressing these concerns initially will help enable you to have highly-reliable APIs/applications in the future that will help grow your business. 
           </p>
          </p>  
 
           <h2 class="section-heading">Step 0: Know your Business and Customer Requirements</h2>
   
-        
           <p>This step is of utmost importance while considering AWS. Before you pick any AWS service, you need to know your business and customer requirements. 
           </p>
             <p>Some important considerations include:</p> 
 
             <ul>
-              <li>The Business flows your API/service will support (example: submit requests, update/store information, etc.) </li>
-              <li>The Customer group - who executes those business processes/flows and where from? (example: humain interaction, clients, different frameworks/applications) </li>
-              <li>Knowing what is the recurrence of every flow? (example 2000 requests per every hour, 100 assignments everyday, etc.)</li>
-              <li>Understanding the business impacts via quantifiable metrics, if for example, any of these flows quit working or malfunction for: 1 moment, 5 minutes, 60 minutes, 8 hours, 24 hours? 
+              <li>The <b>Business flows your API/application will support</b> 
+                <ul>
+                  <li>Examples: submit requests, update/store information, etc.</li>
+              </ul> 
+            </li>
+              <li>The <b>Customer group - who executes those business processes/flows and where from?</b> 
+                <ul>
+                  <li>Examples: human interaction, clients, different frameworks/applications) </li></ul></li>
+              <li>Knowing what is the <b>recurrence of every flow?</b> 
+                <ul><li>Examples: 2000 requests per every hour, 100 assignments everyday, etc.</li></ul></li>
+              <li>Understanding the business impacts through quantifiable metrics, if for example, any of these flows quit working or malfunction for: 1 moment, 5 minutes, 60 minutes, 8 hours, 24 hours? 
               </li>
             </ul>
 
-            Having the answers to the customer points will give you the correct setting to decide on potential AWS services.
+            Having the answers to these customer points will give you the correct setting to decide on potential AWS services.
           </p>
 
-          <h2 class="section-heading">Step 1: Consider Performance and Future Scalability</h2>
-          <p> This can be an expensive erro if not given proper and thorough considerations. 
+          <h2 class="section-heading">Step 1: Consider Performance and Future Scalability Options</h2>
+          <p> This can be an expensive error if not given proper and thorough considerations. 
             Applications are meant to grow over a period of time, either through additional 
-            calling applications, or added features. Although in the early stages it can be difficult 
-            to preciesly pinpoint what numerically the amount of resources/VMs to allocate to a partircular application, 
-            it's always safe to consider the following points:
+            calling applications, or added features. Although, in the early stages it can be difficult 
+            to preciesly pinpoint what numerical amount of resources/instances to allocate to a partircular application, it is always safe to consider the following points:
           </p>
           
-          <h3 class="section">Is the service scalable?</h3>
+          <h3 class="section">Is the service of our choosing scalable?</h3>
           <p>
-            While assessing a specific AWS service, try to pinpoint those AWS resources or confugration settings that will help drive scale for your applications. 
-            This will enable you to begin with the correct limit with regards to each AWS resource, and develop a procedure in place to scale your AWS infrastructure as your application's utilization develops.
+            While assessing a specific AWS service, try to pinpoint those AWS resources, or confugration settings that will help drive scale for your applications. 
+            This will enable you to begin with the correct limit with regards to each AWS resource, and develop a procedure in place to scale your AWS infrastructure as your application's utilization develops over time.
           </p>
 
           <p>
-            Scaling examples: #of Provisioned EC2 instances, Dynamo DB capacity units, Lambda function concurrency, RDS read replicas, Elastic Load Balancers, ElastiCache cluster size, etc.
+            Scaling examples: 
+            <ul>
+              <li>Number of Provisioned EC2 instances</li>
+              <li>Lambda function concurrency</li>
+              <li>RDS read replicas</li>
+              <li>EKS Cluster size</li>
+              <li>Elastic Load Balancers</li>
+              <li>Dynamo DB capacity units</li>
+              <li>...</li>
+            </ul>
           </p>
 
           <h3 class="section">Are there resource utilization limits?</h3>
           <p>
-            AWS can appear like this infinite source of computing power, but there are limits. Specifically, limits applied to your account.
+            AWS can appear like this infinite source of computing power, but there are limits. Specifically, limits applied to your company account.
           </p>
             <p>Here are examples of some resource limit dimensions:</p>
             <ul>
-             <li>Number of provisioned resources (example: EC2 instances, SQS queues, CloudWatch Alarms, IAM Roles/Users, S3 Buckets, VPCs)</li>
-             <li>Data retention periods (example: CloudWatch metric logs, Kinesis streams, SQS message retention)</li> 
-             <li>Throughput (example: concurrent Lambda executions, CloudWatch List/Describe/Put requests, SNS messages per second, Dynamo DB capacity units, EFS throughput in Gb/s)</li> 
+             <li>Number of provisioned instances (Examples: EC2 instances, SQS Queues, CloudWatch Alarms, IAM Roles/Users, S3 Buckets, VPCs)</li>
+             <li>Throughput (Examples: Concurrent Lambda executions, CloudWatch List/Describe/Put requests, SNS messages per second, Dynamo DB capacity units, EFS throughput in Gb/s)</li> 
+             <li>Storage size (example: EBS volume size limits)</li>
+             <li>Data retention policy periods (example: CloudWatch metric logs, Kinesis streams, SQS message retention)</li> 
              <li>Payload size (example: SQS messages, Dynamo DB items, Kinesis records, IoT messages, IAM policy size)</li>
-             <li>Storage size (example: EBS volume size)</li>
-            <li>Keep in mind that some limits can be increased (for example, number of EC2 instances you can launch), while others cannot (for example, metric retention in CloudWatch). You need to ensure that there are no deal breakers for your application in the “cannot be increased” category.</li>
-          </ul>            
+            </ul>  
+            <p>Keep in mind that some limits can be increased (for example, number of EC2 instances you can launch), while others cannot (for example, metric retention in CloudWatch). You need to ensure that there are no deal breakers for your application in the “cannot be increased” category. Otherwise you will pigeonhole yourself into one type of setup for a long time.</p>
+          
           </p>
           <h2 class="section-heading">Step 2: Think about Availability</h2>
-          <p>AWS has a pretty solid engineering support team that is always ready to prevent and fix all sorts of failure scenarios. 
-            But, failures in the AWS services will occur from time to time. 
-            You want to minimize the risk of lost revenue for your company, therefore you have to consider the options a specific AWS service gives you in order to properly handle failure. 
+          <p>AWS has a pretty solid engineering support team that is always ready to prevent and fix all sorts of failure scenarios. But, failures in the AWS services will occur from time to time. 
+            You want to minimize the risk of decreased customer satisfaction, and lost revenue for your company. Therefore, you have to consider the options a specific AWS service gives you in order to properly handle failure. 
             
             <p>It is also worth noting how difficult it is to set up those mechanisms. But totally worth it in the future.</p>
 
             <h3 class="section">What are some possible failure scenarios?</h3>
             <p>At a high-level, these are some types of failure situations you may have to deal with for a particular service:</p>
             <ul>
-              <li>Cannot access existing AWS services - (example: unable view existing S3 Buckets, can't describe EC2 instances, increased latency due to high numbers of failures on an API</li>
-              <li>Cannot create new/additional AWS resources - (example: facing increased error rates and latency while launching EC2 instances)</li>
-              <li>Failing connectivity within Availability Zones - (example: connectivity errors and/or increased rate of latency between EC2 instances in different/same Availability Zones, higher rates of errors between RDS master record and read replicas)</li>
+              <li>Cannot access existing AWS services - (Examples: Unable view existing S3 Buckets, can't properly describe EC2 instances, increased latency due to high numbers of failures on an API)</li>
+              <li>Cannot create new/additional AWS resources - (Examples: facing increased error rates and latency while launching EC2 instances)</li>
+              <li>Failing connectivity within Availability Zones - (Examples: connectivity errors and/or increased rate of latency between EC2 instances in different/same Availability Zones, higher rates of errors between RDS master record and read replicas)</li>
             </ul>
             <p>Before settling on a service, I suggest examining the common failure scenarios of a particular AWS service, and incorporating the recovery strategies into your proposed design.
               The <a href="https://status.aws.amazon.com/">AWS Service Health Dashboard</a> is a good place to view the current status, as well as history of all AWS services region-wide. 
               This will help you undertand the history of particular services, and the failures that have occurred in the past so you can be well-informed.
             </p>
 
-            <h3 class="section">How to mitigate some failure scenarios?</h3>
+            <h3 class="section">How can we mitigate some failure scenarios?</h3>
             <p>Use failover mechanisms to bring up your backup/redundant AWS resources online. Examples
-              are: Using Application Load Balancing to deploy traffic to healthy instances, using health checks,
-              Autoscaling groups for EC2 instances, and Backup-region routing in case of Route53 DNS failures.
+              are: Using Application Load Balancing to deploy traffic to healthy instances, using health checks, Having autoscaling groups for fleets of EC2 instances, and Backup-region routing in case of Route53 DNS failures.
             </p>
 
             <h3 class="section">Backup and Redundancy Measures</h3>
-            <p>Redundancy enables you to have a backup (or additional set )of your AWS resources
+            <p>Redundancy enables you to have a backup (or additional set) of your AWS resources
               that will kick in when there are failures. Examples are: Having a fleet of additional EC2
-            instances ready for traffic, replicated data in S3 (or even S3 versioning-enabled buckets), 
-            RDS Read Replicas as mirror databases, and Cross-region data replication in DynamoDB. </p>
+            instances ready for traffic, replicated data in S3 bcuekts (or even S3 versioning-enabled buckets), RDS Read Replicas as mirror databases, and Cross-region data replication in DynamoDB. </p>
 
           </p>
           <h2 class="section-heading">Step 3: Security</h2>
           <p>AWS provides a number of different methods to give you control and ensure your AWS resources and data are accessed and stored in a secure manner. 
-             IAM (Identity and Access Management) is the key and global method for authentication and permissions management in AWS. 
-             Aside from this one, there are also additional mechanisms and tools that vary by service.
+             IAM (Identity and Access Management) is the key and global method for authentication and permissions management inside of AWS. 
+             Aside from this one, there are also additional methods and tools that vary by service
+             (Cognito, KMS, etc.)
           </p>
           <h3 class="section">Create Resource-based permission policies</h3>
           <p>By and large, everything accessed in AWS is controlled by roles and resource-based 
-            permission policies. Resource-based policies are assigned to entities (another AWS service like S3 buckets, SNS topic, user, admin, etc.)
-            Reource-based policies enforce specific AWS accounrs that are allowed to access a particular resource, and 
+            permission policies. Resource-based policies are assigned to entities (another AWS service like S3 buckets, SNS topic, person, user, admin, etc.) Resource-based policies enforce specific AWS accounts that are allowed to access a particular resource, and 
             the methods (like GET, PUT, DELETE) that can be executed against them. 
           </p>
-          <p>You also have IAM Roles that are assumed/assigned to users/resources which hold Resource-based permission policies.
-            Roles carry flexibility in that they can be assumed by an entity on an as needed basis. 
-          And when no longer required/unauthorized, you can unassign the role and be done.</p>
+          <p>You also have IAM Roles that are assumed/assigned to users/resources which hold Resource-based permission policies. Roles carry flexibility in that they can be assumed by an entity on an as needed basis. And when no longer required/unauthorized, you can unassign the role and be done.</p>
           
-          <h3 class="section">Enable CloudTrail</h3>
+          <h3 class="section">Enable CloudTrail logging</h3>
           <p>CloudTrail enables logging and auditing of nearly all AWS events. You can 
             view API activity logs via CloudTrail, and find out details like which API methods
             are being called, the entity calling them, etc. This helps from a traceability perspective
-            in giving you the paper trail of event in case something like a breach occurs.
+            in giving you the paper trail of events in case something suspicious or like a breach occurs.
           </p>
           <p></p>
           <h3 class="section">Encrypt your Data</h3>
@@ -194,8 +199,8 @@
             Redshift warehousing, and DynamoDB offer encryption at rest to protect stored data.
           </p>
 
-          <h2 class="section-heading">Step 4: Proactive Monitoring and Operations</h2>
-          <p>Early incorporation of operational processes is extremely valuable. If you’re thinking about a particular AWS service, evaluating its features in this context will enable you to identify architecture and application components that will in turn make your operations easier. The earlier you look into this, the better. Monitoring is an critical part of operational procedures, I highly suggest knowing which metrics are available for a particular AWS service.
+          <h2 class="section-heading">Step 4: Set up Proactive Monitoring and Alerting</h2>
+          <p>Early incorporation of operational processes is extremely valuable. If you’re thinking about a particular AWS service, evaluating its features in this context will enable you to identify architecture and application components that will in turn make your operations easier. The earlier you look into this, the better. Monitoring is a critical part of operational procedures. I would also highly suggest knowing which metrics are available for a particular AWS service.
           </p>
           <h3 class="section">Enable CloudWatch monitoring</h3>
           <p>CloudWatch enables capturing of performance metrics. Every service under AWS generates 
@@ -204,19 +209,18 @@
           </p>
           <p>
             Performance metrics vary service to service, in terms of how often they are published. 
-            Example: API Gateway generates metrics per minute, EC2 publishes metrics per minute (at an additional cost), and Elastic MapReduce publishes every five minutes. 
+            Example: API Gateway generates metrics per minute, EC2 service publishes metrics per minute (at an additional cost), and Elastic MapReduce publishes every five minutes. 
           </p>
-          <p>You need to ensure that performance metric intervals make sense for your application, in order to effectively know how it's performing from a health perspective. </p>
+          <p>You need to ensure that performance metric intervals make sense for your application, in order to effectively know how your product is performing from a health perspective. </p>
 
           <p>CloudWatch also allows creation of dashboards to provide a visual and filter data 
-            based on performance metric filters, percentiles, and metric math filters. 
-            Some metrics are not available by default through CloudWatch, so you may need to 
+            based on performance metric filters, percentiles, and metric math (max, min, avg, etc) filters. Some metrics are not available by default through CloudWatch, so you may need to 
             figure out a way to capture those data points. Example: EC2 Memory and Disk utilization is not a default metric available from CloudWatch. 
           </p>
 
           <p>Either way, a method of gathering performance metrics should be another key consideration 
             so that you can be able to tell at any time how your application is performing, and address
-            any concerns.
+            any concerns. 
           </p>
           
           <h3 class="section">Appropriately manage incidents</h3>
@@ -227,19 +231,35 @@
           <h4 class="section">Create CloudWatch Alarms and SNS Notifications</h4>
           <p>By default, all CloudWatch alarms have option to send SNS (Simple Notification Service)
             notifications. You have options on how you'd like to know about particular incidents 
-            once a notification is sent (examples: send an e-mail, push a message to the SQS Queue service, invoke a Lambda function, or call vendor service incident response plaform via HTTPS). 
+            once a notification is sent (examples: send an e-mail, push a message to the SQS Queue service, invoke a Lambda function, or call vendor service incident response plaform via HTTPS). At the minimum, you should set up some alarms and alerts.  
           </p>
 
-          <p>Other points to consider include: if we choose this AWS service, how are we going to if/when something is not right? Will the existing performance metrics from this service be sufficient 
-            to create a meaningful alert/alarm? What are the right time increments (one-minute or five-minute) to be able to tell if a CloudWatch alar needs to be triggered? Do we need more 
-            responsive measures than just the alarm? Once the alarm is triggered, do I have the right infrastructure in place that will handle failover and effective remediation? Will I need to 
-            create new response methods if I choose to implement this particular service? If we pick this AWS service, how can we address issues through automated means? 
+          <h4 class="section">Build realtime dashboards</h4>
+          <p>This will help you monitor your infrastructure in realtime, and 
+            know about problems before they arise. Many service like 
+            DataDog, Splunk, Grafana, etc. integrate nicely with many AWS service
+            and can be configured and stood up within minutes. This is a proactive measure.
+          </p>
+
+          <p>Other points to consider include: if we choose this AWS service, how are we going to know if/when something is not right? 
+            <ul> 
+              <li>Will the existing performance metrics from this service be sufficient 
+                to create a meaningful alert/alarm? </li>
+                <li>What are the right time increments (one-minute or five-minute) to be able to tell if a CloudWatch alarm needs to be triggered? </li>
+                <li>Do we need more 
+                  responsive measures than just the alarm? </li>
+                  <li>Once the alarm is triggered, do I have the right infrastructure in place that will handle failover and effective remediation?</li> 
+                  <li>Will I need to 
+                    create new response methods if I choose to implement this particular service? </li>
+                    <li>If we pick this AWS service, how can we address issues through automated means? </li></ul>
+
           </p>
           
           <h3 class="section">Deployment methods and practices</h3>
 
           <p>This aspect is almost considered way late - how are we going to deploy this thing?
-            Will we automate deployments? Use GitOps? 
+            Will we automate deployments? Use GitOps? Frequent deployments become more and more common as you grow your application, and gain additional consumers. Bad deployment practices can cause bottlenecks in your workflows and cause disruptions in shipping features out to market. 
+            Always try to automate deployments, and look into using GitOps for releases. 
           </p>
 
           <h4>IaaC - Terraform or CloudFormation</h4>
@@ -250,25 +270,22 @@
           </p>
 
           <p>They both can have a learning curve, so it is important to understand and 
-            experiment with them to know how they work. It's also important to know about how to do Rollbacks if necessary, as well as any automated processes/setup that you may need to run prior/after you run your 
-            Terraform or CloudFormation deployment. 
+            experiment with them to know how they work. It's also important to know about how to do Rollbacks if necessary, as well as any automated processes/setup that you may need to run prior/after you run your Terraform or CloudFormation deployment. 
           </p>
           
-          <h2 class="section-heading">Step 5: Know your Costs</h2>
+          <h2 class="section-heading">Step 5: Know about your Costs</h2>
           <p></p>
           
           <h3 class="section">Determine the AWS price dimensions as linked to your application and AWS service</h3>
           
           <p>A lot of teams tend to disregard important price attributes of their applications.
             Example: Cost estimation of EC2 being primarily based on instance type, and not accounting
-            for the storage costs in EBS or data transfer costs. 
+            for the accrued storage costs in EBS or data transfer costs. 
           </p>
 
           <p>Example: You've got a File-Sharing server using the EC2 t2.Large instance, and
             you're only focused on the hourly compute costs for that type of instance. Alone, 
-            the compute charges for t2.Large will be around $70 per month in the N.Virginia region. 
-            Then, if say your server transfers one terabyte of data per month externally, your transfer cost can be anywhere between $90-$110 alone. One terabyte of Elastic BlockStore can cost 
-            around $100 per month. 
+            the compute charges for t2.Large will be around $70 per month (as of current date) in the N.Virginia region. Then, if say your server transfers one terabyte of data per month externally, your transfer cost can range anywhere between $90-$110 alone. One terabyte of Elastic BlockStore can cost around $100 per month. Imagine 2, 4, 10, 30...
           </p>
 
           <p>If this type of oversight is made at a scale, you can be paying upwards of couple thousands
@@ -276,7 +293,7 @@
           </p>
           
           <h3 class="section">Identify and calculate price at scale</h3>
-          <p>Try to evaluate AWS services based on price calculations for low and high usage of a particular service. What happens when your application sees more than expected levels of traffic? What if less than you previously thought? A lot less?</p>
+          <p>Try to evaluate AWS services based on price calculations for low and high usage of a particular service. What happens when your application sees more than expected levels of traffic? What if you experience less than you previously thought? A lot less?</p>
 
           <p>There are some AWS services that cost less as usage increases. S3 is one of those, and it
             has different price ranges all depending on usage. 
@@ -284,7 +301,7 @@
 
           <p>Lambda functions can be a double-edge sword in these scenarios. Some can be more expensive 
             at 200 transactions per second, in comparison to an EKS Cluster containing 6 M3.large instances. Now, this also depends on the function type and intensity (if it takes 1200ms to run, and consumes up to 512MB of memory per execution), you could easily be paying upwards 
-            of $15,000 for your Lambda. But, if that same function volume-wise did not receive a relatively large number of calls, that would be the prime option. 
+            of $15,000 for your Lambda. But, if that same function volume-wise did not receive a relatively large number of calls, Lambda would be the prime option. 
           </p>
         
   
