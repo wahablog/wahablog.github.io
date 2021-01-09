@@ -3,7 +3,7 @@
     "name": "abdulwahab-tech-blog",
     "version": "1.0.0",
     "scripts": {
-        "start": "gulp watch"
+        "start": "npx http-server"
     },
     "description": "Technical Blog about software engineering, aws, technical architecture, angular, product management, and digital acceleration.",
     "keywords": [
