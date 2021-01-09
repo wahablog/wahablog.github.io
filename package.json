@@ -1,11 +1,11 @@
 {
-    "title": "Clean Blog",
-    "name": "startbootstrap-clean-blog",
-    "version": "5.0.5",
+    "title": "wahablog",
+    "name": "abdulwahab-tech-blog",
+    "version": "1.0.0",
     "scripts": {
         "start": "gulp watch"
     },
-    "description": "Clean Blog is a Medium inspired blog theme for Bootstrap.",
+    "description": "Technical Blog about software engineering, aws, technical architecture, angular, product management, and digital acceleration.",
     "keywords": [
         "css",
         "sass",
