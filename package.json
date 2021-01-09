@@ -5,7 +5,7 @@
     "scripts": {
         "start": "npx http-server"
     },
-    "description": "Technical Blog about software engineering, aws, technical architecture, angular, product management, and digital acceleration.",
+    "description": "Technical Blog about Software Engineering, AWS, Technical Architecture, Angular, Product Management, and Digital Acceleration.",
     "keywords": [
         "css",
         "sass",
